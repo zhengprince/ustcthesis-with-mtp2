@@ -70,7 +70,8 @@
     This template requires TeX Live\MessageBreak 2016 or later version}{}
 }
 \RequirePackage{amsmath}
-\RequirePackage{unicode-math}
+\RequirePackage{fontspec}
+%\RequirePackage{unicode-math}
 \RequirePackage{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
@@ -165,33 +166,33 @@
     }{}
   }
 }
-\unimathsetup{
-  math-style = ISO,
-  bold-style = ISO,
-  nabla      = upright,
-  partial    = upright,
-}
-\newif\ifustc@xitsnew
-\@ifpackagelater{fontspec}{2017/01/20}{
-  \IfFontExistsTF{XITSMath-Regular.otf}{
-    \ustc@xitsnewtrue
-  }{}
-}{}
-\ifustc@xitsnew
-  \setmathfont[
-    Extension    = .otf,
-    BoldFont     = XITSMath-Bold,
-    StylisticSet = 8,
-  ]{XITSMath-Regular}
-  \setmathfont[range={cal,bfcal},StylisticSet=1]{XITSMath-Regular.otf}
-\else
-  \setmathfont[
-    Extension    = .otf,
-    BoldFont     = *bold,
-    StylisticSet = 8,
-  ]{xits-math}
-  \setmathfont[range={cal,bfcal},StylisticSet=1]{xits-math.otf}
-\fi
+%\unimathsetup{
+%  math-style = ISO,
+%  bold-style = ISO,
+%  nabla      = upright,
+%  partial    = upright,
+%}
+%\newif\ifustc@xitsnew
+%\@ifpackagelater{fontspec}{2017/01/20}{
+%  \IfFontExistsTF{XITSMath-Regular.otf}{
+%    \ustc@xitsnewtrue
+%  }{}
+%}{}
+%\ifustc@xitsnew
+%  \setmathfont[
+%    Extension    = .otf,
+%    BoldFont     = XITSMath-Bold,
+%    StylisticSet = 8,
+%  ]{XITSMath-Regular}
+%  \setmathfont[range={cal,bfcal},StylisticSet=1]{XITSMath-Regular.otf}
+%\else
+%  \setmathfont[
+%    Extension    = .otf,
+%    BoldFont     = *bold,
+%    StylisticSet = 8,
+%  ]{xits-math}
+%  \setmathfont[range={cal,bfcal},StylisticSet=1]{xits-math.otf}
+%\fi
 \ustc@strifeq{\ustc@fontset}{mac}{
   \newfontfamily\ustc@circlefont{Songti SC Light}
 }{
@@ -959,25 +960,26 @@
   \renewcommand\leq{\leqslant}%
   \renewcommand\geq{\geqslant}%
 }
-\removenolimits{%
-  \int\iint\iiint\iiiint\oint\oiint\oiiint
-  \intclockwise\varointclockwise\ointctrclockwise\sumint
-  \intbar\intBar\fint\cirfnint\awint\rppolint
-  \scpolint\npolint\pointint\sqint\intlarhk\intx
-  \intcap\intcup\upint\lowint
-}
+%\removenolimits{%
+%  \int\iint\iiint\iiiint\oint\oiint\oiiint
+%  \intclockwise\varointclockwise\ointctrclockwise\sumint
+%  \intbar\intBar\fint\cirfnint\awint\rppolint
+%  \scpolint\npolint\pointint\sqint\intlarhk\intx
+%  \intcap\intcup\upint\lowint
+%}
 \AtBeginDocument{%
   \renewcommand\Re{\operatorname{Re}}%
   \renewcommand\Im{\operatorname{Im}}%
 }
-\AtBeginDocument{%
-  \renewcommand\nabla{\mbfnabla}%
-}
-\newcommand\bm{\symbf}
-\renewcommand\boldsymbol{\symbf}
-\newcommand\square{\mdlgwhtsquare}
-\newcommand\upe{\symup{e}}
-\newcommand\upi{\symup{i}}
+%\AtBeginDocument{%
+%  \renewcommand\nabla{\mbfnabla}%
+%}
+\newcommand\nbl{\bm{\nabla}}
+%\newcommand\bm{\symbf}
+%\renewcommand\boldsymbol{\symbf}
+%\newcommand\square{\mdlgwhtsquare}
+\newcommand\upe{\mathrm{e}}
+\newcommand\upi{\mathrm{i}}
 \newcommand\dif{\mathop{}\!\mathrm{d}}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}

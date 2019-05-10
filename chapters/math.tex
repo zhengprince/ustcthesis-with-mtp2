@@ -27,23 +27,19 @@
 \LaTeX{} 默认按照美国的习惯排版数学公式和符号，
 但是《撰写手册》要求数学符号依据《GB 3102.11--1993》执行，
 与 \LaTeX{} 的习惯有所差异。
-本模板基于 \pkg{unicode-math} 配置数学符号，以遵循国标的规定。
+本模板基于 \pkg{mpt2} 配置数学符号，并尽量遵循国标的规定。
 
-注意，\pkg{unicode-math} 宏包与 \pkg{amsfonts}, \pkg{amssymb}, \pkg{bm},
-\pkg{mathrsfs}, \pkg{upgreek} 等宏包\emph{不}兼容。
-本模板作了处理，用户可以直接使用这些宏包的命令，如 \cs{bm}, \cs{mathscr},
-\cs{upGamma}。
-
-本模板中数学符号的用法与 \LaTeX{} 传统有些区别：
+本模板中数学符号的用法与ustctug/ustcthesis有些区别：
 \begin{itemize}
   \item 数学常数和特殊函数使用正体，
-    如圆周率 $\symup{\pi}$、$\symup{\Gamma}$ 函数。
-    应使用 \pkg{unicode-math} 宏包提供的 \cs{symup} 命令转为正体，
-    如 \verb|\symup{\pi}|。
-  \item 向量和矩阵粗斜体，应使用 \cs{symbf} 命令，
-    如 \verb|\symbf{u}|、\verb|\symbf{A}|。
-  \item 有限增量符号 $\increment$ （U+2206）应使用 \cs{increment} 命令。
+    如圆周率 $\uppi$、$\upGamma$ 函数。
+    应在前面加上\cs{up} 命令转为正体，
+    如 \verb|\uppi|。
+  \item 向量和矩阵粗斜体，应使用 \cs{bm} 命令，
+    如 \verb|\bm{u}|、\verb|\bm{A}|。
+  \item 有限增量符号 $\upDelta$ （U+2206）应使用 \cs{upDelta} 命令。
   \item 微分符号 $\dif$ 使用正体，本模板提供了 \cs{dif} 命令。
+  \item 符号 $\nbl$ ，本模板提供了 \cs{nbl} 命令。
 \end{itemize}
 
 除此之外，模板还提供了一些命令方便使用：
@@ -63,9 +59,9 @@
 这样输入更简单，也让 \LaTeX{} 代码更有可读性，
 而且还方便根据需要统一修改改格式，比如：
 \begin{itemize}
-  \item 向量 $\vec{x}$：\verb|\renewcommand\vec{\symbf}|
-  \item 矩阵 $\mat{A}$：\verb|\newcommand\mat{\symbf}|
-  \item 张量 $\ts{T}$： \verb|\newcommand\ts{\symbfsf}|
+  \item 向量 $\vec{x}$：\verb|\renewcommand\vec{\bm}|
+  \item 矩阵 $\mat{A}$：\verb|\newcommand\mat{\bm}|
+  \item 张量 $\ts{T}$： \verb|\newcommand\ts{\bm}|
 \end{itemize}
 
 更多的例子：

@@ -1,3 +1,5 @@
+##### 本模板基于[ustctug/ustcthesis](https://github.com/ustctug/ustcthesis)制作，用MathTimePro2替换了unicode-math，所以会有一些不符合《GB 3102.11--1993》的地方，请自行斟酌。另外由于版权原因，这里不提供MathTimePro2的下载，请自行右转寻找[传送门](http://www.latexstudio.net/archives/241.html)。下方为原版README
+
 # 中国科学技术大学学位论文 LaTeX 模板
 
 [![Travis build](https://travis-ci.org/ustctug/ustcthesis.svg?branch=master)](https://travis-ci.org/ustctug/ustcthesis)

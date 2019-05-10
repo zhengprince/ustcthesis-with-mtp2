@@ -2,7 +2,7 @@
 % !TeX program = xelatex
 % !TeX spellcheck = en_US
 
-\documentclass[doctor]{ustcthesis}
+\documentclass[doctor,chinese,pdf]{ustcthesis}
 % doctor|master|bachelor [academic|professional] [chinese|english] [print|pdf]
 % [super|numebers|authoryear]
 
@@ -36,17 +36,22 @@
 \usepackage{siunitx}
 \usepackage{amsthm}
 \usepackage{hyperref}
+\usepackage{amsmath}
+
+% The following loads mtpro and defines some common MTPro options [2, 4]
+\usepackage[subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+
+\usepackage{bm}
+\usepackage[T1]{fontenc}		% use this if European fonts (ec) package is installed
+\renewcommand{\rmdefault}{ptm}		% set Times as the default text font
 
 \DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
 \newcommand\pkg{\textsf}
 
-\renewcommand\vec{\symbf}
-\newcommand\mat{\symbf}
-\newcommand\ts{\symbfsf}
-\newcommand\real{\mathbf{R}}
-
-
-
+\renewcommand\vec{\bm}
+\newcommand\mat{\bm}
+\newcommand\ts{\bm}
+\newcommand\real{\mbf{R}}
 
 \begin{document}
 
@@ -76,6 +81,7 @@
 \mainmatter
 \input{chapters/intro}
 \input{chapters/floats}
+\input{chapters/MTP2}
 \input{chapters/math}
 \input{chapters/citations}
 \bibliography{bib/ustc}
@@ -86,5 +92,5 @@
 \backmatter
 \input{chapters/acknowledgements}
 \input{chapters/publications}
-
+	
 \end{document}
