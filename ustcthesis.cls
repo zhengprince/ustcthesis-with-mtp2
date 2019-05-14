@@ -978,6 +978,7 @@
 %\newcommand\bm{\symbf}
 %\renewcommand\boldsymbol{\symbf}
 %\newcommand\square{\mdlgwhtsquare}
+\renewcommand\partial{\vardelta}
 \newcommand\upe{\mathrm{e}}
 \newcommand\upi{\mathrm{i}}
 \newcommand\dif{\mathop{}\!\mathrm{d}}
